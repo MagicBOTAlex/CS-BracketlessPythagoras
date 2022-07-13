@@ -3,7 +3,7 @@
 /// =====================
 float sideA = 0;
 float sideB = 0;
-float sideZ = 0;
+float sideC = 0;
 
 float Eax = 0;
 float Ebx = 0;
@@ -32,12 +32,12 @@ CalculatePythagorean:
     Ebx = sideB;
     goto SumEaxEbx;
     SumEaxEbxReturn:
-    sideZ = Eax;
+    sideC = Eax;
     
-    Eax = sideZ;
+    Eax = sideC;
     goto SquareRootEax;
     SquareRootEaxReturn:
-    sideZ = Eax;
+    sideC = Eax;
 
 goto CalTriAreaReturn;
 
@@ -105,4 +105,4 @@ sideB = float.Parse(Console.ReadLine());
 goto CalculatePythagorean;
 CalTriAreaReturn:
 
-Console.WriteLine("\nTriangle side c is: " + sideZ);
+Console.WriteLine("\nTriangle side c is: " + sideC);
