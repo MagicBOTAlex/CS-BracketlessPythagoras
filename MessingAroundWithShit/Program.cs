@@ -39,7 +39,7 @@ CalculatePythagorean:
     SquareRootEaxReturn:
     sideC = Eax;
 
-goto CalTriAreaReturn;
+    goto CalTriAreaReturn;
 
 // Calculates the power of 2 for Eax
 PowFuctionEax:
@@ -54,7 +54,7 @@ PowFuctionEbx:
 // Sums the Eax register with Ebx and outpust it to the Eax register
 SumEaxEbx:
     Eax = Eax + Ebx;
-goto SumEaxEbxReturn;
+    goto SumEaxEbxReturn;
 
 // Finds the square root of Ecx and outputs the result to the Ecx register
 // Note: uses the Eax, Ebx, Ecx and Edx registers
