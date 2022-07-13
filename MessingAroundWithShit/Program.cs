@@ -43,13 +43,13 @@ goto CalTriAreaReturn;
 
 // Calculates the power of 2 for Eax
 PowFuctionEax:
-Eax = Eax * Eax;
-goto PowFuctionEaxReturn;
+    Eax = Eax * Eax;
+    goto PowFuctionEaxReturn;
 
 // Calculates the power of 2 for Ebx
 PowFuctionEbx:
-Ebx = Ebx * Ebx;
-goto PowFuctionEbxReturn;
+    Ebx = Ebx * Ebx;
+    goto PowFuctionEbxReturn;
 
 // Sums the Eax register with Ebx and outpust it to the Eax register
 SumEaxEbx:
@@ -78,14 +78,17 @@ SqrtLoopCycle:
 SqrtLoop2Cycle:
     if (!(Edx < 4))
         goto SqrtLoop2Escape;
-    Ecx = ((Eax + Ebx) * 0.5f);
-    Ebx = ((Ebx / Ecx) * Eax);
+    Ecx = Eax + Ebx;
+    Ecx = Ecx * 0.5f;
+    Ebx = Ebx / Ecx;
+    Ebx = Ebx * Eax;
     Eax = Ecx;
     Edx = Edx + 1;
     goto SqrtLoop2Cycle;
 
 SqrtLoop2Escape:
-    Eax = ((Eax + Ecx) * 0.5f);
+    Eax = Eax + Ecx;
+    Eax = Eax * 0.5f;
     goto SquareRootEaxReturn;
 
 SquareRootNormalize:
@@ -97,12 +100,12 @@ SquareRootNormalize:
 
 // Main entry for program
 Main:
-Console.Write("Input triangle side a value:");
-sideA = float.Parse(Console.ReadLine());
-Console.Write("Input triangle side b value:");
-sideB = float.Parse(Console.ReadLine());
+    Console.Write("Input triangle side a value:");
+    sideA = float.Parse(Console.ReadLine());
+    Console.Write("Input triangle side b value:");
+    sideB = float.Parse(Console.ReadLine());
 
-goto CalculatePythagorean;
-CalTriAreaReturn:
+    goto CalculatePythagorean;
+    CalTriAreaReturn:
 
-Console.WriteLine("\nTriangle side c is: " + sideC);
+    Console.WriteLine("\nTriangle side c is: " + sideC);
